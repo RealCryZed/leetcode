@@ -8,6 +8,8 @@ public class Solution {
     }
 
     public static boolean isPalindrome(int x) {
+        if (x < 0) return false;
+
         String str = String.valueOf(x);
 
         if (str.length() == 1) return true;
