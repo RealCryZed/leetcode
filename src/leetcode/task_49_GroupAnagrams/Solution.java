@@ -27,12 +27,7 @@ public class Solution {
             map.put(wordInString, list);
         }
 
-        List<List<String>> listOfString = new ArrayList<>();
-        for (Map.Entry<String, ArrayList<String>> pair : map.entrySet()) {
-            listOfString.add(pair.getValue());
-        }
-
-        return listOfString;
+        return new ArrayList<>(map.values());
     }
 
     /**
