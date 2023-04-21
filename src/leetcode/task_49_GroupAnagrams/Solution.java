@@ -5,12 +5,12 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
-//        System.out.println(groupAnagrams(new String[]{"eat","tea","tan","ate","nat","bat"}));
-//        System.out.println(groupAnagrams(new String[]{"a"}));
-//        System.out.println(groupAnagrams(new String[]{""}));
+        System.out.println(groupAnagrams(new String[]{"eat","tea","tan","ate","nat","bat"}));
+        System.out.println(groupAnagrams(new String[]{"a"}));
+        System.out.println(groupAnagrams(new String[]{""}));
         System.out.println(groupAnagrams(new String[]{"", ""}));
         System.out.println(groupAnagrams(new String[]{"", "b"}));
-//        System.out.println(groupAnagrams(new String[]{"", "b", ""}));
+        System.out.println(groupAnagrams(new String[]{"", "b", ""}));
     }
 
     private static List<List<String>> groupAnagrams(String[] strs) {
@@ -35,24 +35,24 @@ public class Solution {
         return listOfString;
     }
 
+    /**
+     * Почти правильное решение. Единственное, что считает неправильно - анаграмму ["",""]
+     * Output = [[]]
+     * Expected = [[""],[""]]
+     */
 
 //    public static List<List<String>> groupAnagrams(String[] strs) {
+//        Map<String, List<String>> map = new HashMap<>();
 //        Map<String, String> mapOfWords = new HashMap<>();
-//        Map<String, ArrayList<String>> mapMap = new HashMap<>();
 //
 //        char[][] words = new char[strs.length][];
+//
 //        for (int i = 0; i < strs.length; i++) {
 //            words[i] = strs[i].toCharArray();
 //            Arrays.sort(words[i]);
 //            mapOfWords.put(strs[i], String.valueOf(words[i]));
-//
-//            ArrayList<String> list = mapMap.getOrDefault( String.valueOf(words[i]),
-//                    new ArrayList<String>() );
-//            list.add(strs[i]);
-//            System.err.println(list);
 //        }
 //
-//        Map<String, List<String>> map = new HashMap<>();
 //        for (Map.Entry<String, String> pair : mapOfWords.entrySet()) {
 //            map.computeIfAbsent(pair.getValue(), k -> new ArrayList<>()).add(pair.getKey());
 //        }
