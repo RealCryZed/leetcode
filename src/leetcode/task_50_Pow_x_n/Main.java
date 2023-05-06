@@ -1,7 +1,6 @@
 package leetcode.task_50_Pow_x_n;
 
-// This is bad solution for this task. We need to use recursion for proper fast solution
-public class Solution {
+public class Main {
 
     public static void main(String[] args) {
         // 1024.000
@@ -43,28 +42,25 @@ public class Solution {
     }
 
     public static double myPow(double x, int n) {
+        if (x < -10000 || x > 10000) {
+            return 0;
+        }
+
         if (n == 0) return 1;
-        else if (n == 1.000000000000) return x;
-        else if (n == -1.000000000000) return 1 / x;
-        else if (x == 1.000000000000) {
-            if (n == -2147483648) return x;
-            else return x;
-        }
-        else if (x == -1.000000000000) {
-            if (n == -2147483648) return 1;
-            else return x;
-        }
-        else if (n == -2147483648 && x > 1) return 0;
-        else if (n == -2147483648 && x < -1) return 0;
 
-        double result = x;
-
-        for (int i = 1; i < Math.abs(n); i++) {
-            result = result * x;
+        if (n < 0)  {
+            x = 1 / x;
+            n = n * -1;
         }
 
-        if (n < 0) result = 1 / result;
+        if (n % 2 == 0) {
+            x = x * x;
+            n = n / 2;
+            x = myPow(x, n);
+        } else {
+            x = x * myPow(x, n-1);
+        }
 
-        return result;
+        return x;
     }
 }
