@@ -1,4 +1,4 @@
-package leetcode.REPEAT_task_46_Permutations;
+package leetcode.task_46_Permutations;
 
 import java.util.*;
 
