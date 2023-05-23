@@ -6,10 +6,10 @@ import java.util.List;
 public class RepeatSolution {
     public static void main(String[] args) {
         System.out.println(permute(new int[]{1,2,3}));
-//        System.out.println(permute(new int[]{0,1}));
-//        System.out.println(permute(new int[]{1}));
+        System.out.println(permute(new int[]{0,1}));
+        System.out.println(permute(new int[]{1}));
 //        24 разных
-//        System.out.println(permute(new int[]{5,7,9,11}));
+        System.out.println(permute(new int[]{5,7,9,11}));
     }
 
     public static List<List<Integer>> permute(int[] nums) {
